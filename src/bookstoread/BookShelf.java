@@ -1,6 +1,7 @@
 package bookstoread;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -17,5 +18,9 @@ public class BookShelf {
     // Méthode pour retourner la liste des livres
     public List<String> books() {
         return Collections.unmodifiableList(books);
+    }
+
+    public void add(String... booksToAdd) {
+        books.addAll(Arrays.asList(booksToAdd));
     }
 }

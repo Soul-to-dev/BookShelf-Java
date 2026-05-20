@@ -5,8 +5,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +26,7 @@ public class BookShelfSpec {
         shelf = new BookShelf();
         effectiveJava = new Book("Effective Java", "Joshua Bloch",
                 LocalDate.of(2008, Month.MAY, 8));
-        codeComplete = new Book("Code Complete", "Steve McConnel",
+        codeComplete = new Book("Code Complete", "Steve McConnell",
                 LocalDate.of(2004, Month.JUNE, 9));
         mythicalManMonth = new Book("The Mythical Man-Month", "Frederick Phillips Brooks",
                 LocalDate.of(1975, Month.JANUARY, 1));

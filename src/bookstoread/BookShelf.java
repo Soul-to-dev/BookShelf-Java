@@ -4,24 +4,23 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BookShelf {
 
-    private List<String> books = new ArrayList<>();
+    private List<Book> books = new ArrayList<>();
 
-    public void add(String... booksToAdd) {
+    public void add(Book... booksToAdd) {
         books.addAll(Arrays.asList(booksToAdd));
     }
 
-    public List<String> books() {
+    public List<Book> books() {
         return Collections.unmodifiableList(books);
     }
 
-    // Nouvelle méthode : retourne les livres triés alphabétiquement
-    public List<String> arrange() {
-        List<String> sortedBooks = new ArrayList<>(books);
-        Collections.sort(sortedBooks);
-        return sortedBooks;
+    public List<Book> arrange() {
+        return books.stream()
+                .sorted()
+                .collect(Collectors.toList());
     }
-
 }

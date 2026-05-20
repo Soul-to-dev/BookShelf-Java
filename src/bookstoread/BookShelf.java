@@ -16,4 +16,12 @@ public class BookShelf {
     public List<String> books() {
         return Collections.unmodifiableList(books);
     }
+
+    // Nouvelle méthode : retourne les livres triés alphabétiquement
+    public List<String> arrange() {
+        List<String> sortedBooks = new ArrayList<>(books);
+        Collections.sort(sortedBooks);
+        return sortedBooks;
+    }
+
 }

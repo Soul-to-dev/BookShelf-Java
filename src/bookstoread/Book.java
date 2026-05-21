@@ -2,7 +2,12 @@ package bookstoread;
 
 import java.time.LocalDate;
 
+/**
+ * Représente un livre avec son titre, auteur et date de publication.
+ * Implémente Comparable pour permettre le tri alphabétique par titre.
+ */
 public class Book implements Comparable<Book> {
+
     private final String title;
     private final String author;
     private final LocalDate publishedOn;
@@ -17,13 +22,17 @@ public class Book implements Comparable<Book> {
     public String getAuthor() { return author; }
     public LocalDate getPublishedOn() { return publishedOn; }
 
+    /**
+     * Tri naturel par titre de livre (ordre alphabétique).
+     */
     @Override
-    public String toString() {
-        return "Book{title='" + title + "', author='" + author + "', publishedOn=" + publishedOn + "}";
+    public int compareTo(Book other) {
+        return this.title.compareTo(other.title);
     }
 
     @Override
-    public int compareTo(Book that) {
-        return this.title.compareTo(that.title);
+    public String toString() {
+        return "Book{title='" + title + "', author='" + author +
+                "', publishedOn=" + publishedOn + "}";
     }
 }
